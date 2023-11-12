@@ -6,5 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'store';
+  protected products: String[] = [
+    'Milk',
+    'Bread',
+    'Beans',
+  ];
+  protected product: String = '';
+
+  protected addProduct() {
+    if (this.product.length) {
+      this.products.push(this.product);
+      this.product = '';
+    }
+  }
+
+  protected removeProduct(idx: number) {
+    this.products.splice(idx, 1);
+  }
 }
