@@ -21,6 +21,8 @@ export class AppComponent {
   }
 
   protected removeProduct(idx: number) {
+    // This is neccesary because the list is reversed
+    idx = this.products.length - idx - 1;
     this.products.splice(idx, 1);
   }
 }
